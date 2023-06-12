@@ -96,7 +96,7 @@ const questions = [
 
 //variabili globali
 let score = 0;
-let questionDiv = document.getElementsByClassName("question");
+let questionDiv = document.getElementById("question");
 let answerDiv = document.getElementsByClassName("answer");
 let numberQuestionDiv = document.getElementsByClassName("number-questions");
 
@@ -119,4 +119,4 @@ let risposta = document.createElement("div")
 domanda.innerText = question[0]
 console.log(domanda);
 questionDiv.appendChild(risposta)
-let divAnswer = create.createElement("div")
+// let divAnswer = create.createElement("div")
