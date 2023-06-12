@@ -102,7 +102,7 @@ let questionDiv = document.getElementById("question");
 let answerDiv = document.getElementById("answers"); 
 // variable for correct answers only
 const correct_answer = ["Central Processing Unit", "Final", "False", "False",".svg","Cascading Style Sheet","Nougat","140","False","Java",]
-// console.log(correct_answer)
+console.log(correct_answer)
 
 // making a function for picking the questions and putting them into the array
 const questionPicker = function () {
