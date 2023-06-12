@@ -96,7 +96,7 @@ const questions = [
 
 //variabili globali
 let score = 0;
-let questionDiv = document.getElementById("question");
+let questionDiv = document.getElementsById("question");
 let answerDiv = document.getElementsByClassName("answer");
 let numberQuestionDiv = document.getElementsByClassName("number-questions");
 
