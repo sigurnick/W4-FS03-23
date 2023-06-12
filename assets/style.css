@@ -1,6 +1,6 @@
 body{
-    max-width: 500px;
-    background-repeat: no-repeat;
+   
+    /* background-repeat: no-repeat; */
     background-size: 100%;
      margin-left: 5em;
     background-image: url(../assets/bg.jpg);
@@ -59,3 +59,4 @@ button{
    border: 1px;
      
 }
+
