@@ -119,4 +119,4 @@ let risposta = document.createElement("div")
 domanda.innerText = question[0]
 console.log(domanda);
 questionDiv.appendChild(risposta)
-// let divAnswer = create.createElement("div")
+let divAnswer = create.createElement("div")
