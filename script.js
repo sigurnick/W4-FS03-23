@@ -164,4 +164,19 @@ function checkAnswer(selectedAnswer, questionIndex) {
   } else {
     console.log("Wrong answer!");
   }
+  return score 
+  function scoreCounter(){
+    if (score === 6 ){ 
+      console.log ('sei promosso', score)
+    }
+    else {
+      console.log('mi dispiace', score)
+    }
+  }
 }
+
+
+
+
+
+
