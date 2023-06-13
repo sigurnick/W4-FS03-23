@@ -1,7 +1,7 @@
 body{
    
-    /* background-repeat: no-repeat; */
-    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
      margin-left: 5em;
     background-image: url(../assets/bg.jpg);
 }
@@ -65,3 +65,4 @@ button{
     font-size: 2em;
     margin-top: 10em;
 }
+

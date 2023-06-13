@@ -141,13 +141,15 @@ function showQuestion() {
 
   let answerElement = document.createElement("div");
   answerElement.classList.add("answer-list");
-
+// created a for each, that create a element p for every answer 
   answerArray[currentQuestionIndex].forEach((answer) => {
     let answerItem = document.createElement("p");
-    answerItem.innerText = answer;
-
+    answerItem.classList.add('answer-item')
+      answerItem.innerText = answer;
+// add an eventlistener for selecting the answer 
     answerItem.addEventListener("click", function () {
       checkAnswer(answerItem.innerText);
+      
     });
 
     answerElement.appendChild(answerItem);
@@ -159,6 +161,9 @@ function showQuestion() {
   questionDiv.innerHTML = ""; // Clear the previous question
   questionDiv.appendChild(questionContainer);
 }
+
+// created a function to calculate the total score of the user
+
 function calculateTotalScore() {
   let totalScore = 0;
   
@@ -170,6 +175,9 @@ function calculateTotalScore() {
   
   return totalScore;
 }
+
+// created a function for checking if the selected answer is === correct answer
+
 
 function checkAnswer(selectedAnswer) {
   if (selectedAnswers[currentQuestionIndex] === null) {
@@ -185,13 +193,14 @@ function checkAnswer(selectedAnswer) {
 
     selectedAnswers[currentQuestionIndex] = selectedAnswer;
     currentQuestionIndex++; // Move to the next question
+    
     if (currentQuestionIndex < questionArray.length) {
       showQuestion(); // Show the next question
     } else {
       // All questions answered, display total score
       const totalScore = calculateTotalScore();
       console.log("Total score:", totalScore);
-      // Display the score on the page or perform any other action you desire
+    //  displayed the score on the users screen 
       document.getElementById("score").innerText = "Score: " + totalScore;
     }
 
