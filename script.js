@@ -96,10 +96,21 @@ const questions = [
   },
 ];
 
+
 // Global variable
 let score = 0;
 let questionDiv = document.getElementById("question");
 let answerDiv = document.getElementById("answers"); 
+let timeRemaining = 60; 
+
+
+// created a function for the display of the time in the page
+function updateTimerDisplay() {
+  const timerDisplay = document.getElementById("timer");
+  timerDisplay.innerText = timeRemaining ;
+}
+
+
 
 // Variable for correct answers only
 const correct_answer = ["Central Processing Unit", "Final", "False", "False",".svg","Cascading Style Sheet","Nougat","140","False","Java"];
@@ -133,50 +144,62 @@ let currentQuestionIndex = 0; // Track the current question index
 
 // Loop through the questions and add them to the DOM
 function showQuestion() {
+  timeRemaining = 60;
+  updateTimerDisplay()
   let questionContainer = document.createElement("div");
   questionContainer.classList.add("question-container");
 
   // question number displayed
-
   let questionNumberElement = document.createElement("p");
   questionNumberElement.innerText = "Question " + (currentQuestionIndex + 1) + "/" + questionArray.length
   questionNumberElement.classList.add("question-number");
 
+  // setting a local storage, for taking the value to the next page
   localStorage.setItem('questionLength', questionArray.length);
 
+// adding the questions 
   let questionElement = document.createElement("h1");
   questionElement.innerText = questionArray[currentQuestionIndex];
   questionElement.classList.add('question')
   
-
+// adding all the answers
   let answerElement = document.createElement("div");
   answerElement.classList.add("answer-list");
+
 // created a for each, that create a element p for every answer 
-  answerArray[currentQuestionIndex].forEach((answer) => {
-    let answerItem = document.createElement("p");
-    answerItem.classList.add('answer-item')
-      answerItem.innerText = answer;
+answerArray[currentQuestionIndex].forEach((answer) => {
+  let answerItem = document.createElement("p");
+  answerItem.classList.add('answer-item');
+
+  //added a math random for randomize the order of the answers
+  answerItem.style.order = Math.floor(Math.random()*100)
+  answerItem.innerText = answer;
+
 // add an eventlistener for selecting the answer 
     answerItem.addEventListener("click", function (event) {
       checkAnswer(answerItem.innerText);
       event.target.classList.add('selected');
       
     });
-
+  
     answerElement.appendChild(answerItem);
   });
 
-  
+  // appended evrytingh so it shows in the page
   questionContainer.appendChild(questionElement);
   questionContainer.appendChild(answerElement);
   questionContainer.appendChild(questionNumberElement);
 
-  questionDiv.innerHTML = ""; // Clear the previous question
+  // created a .innerHTML for resetting the question and pushing the next one
+  questionDiv.innerHTML = ""; 
   questionDiv.appendChild(questionContainer);
+
+  // recalled the function so it starts the time whenever you are in the question page
+  
+ 
 }
 
 // created a function to calculate the total score of the user
-
 function calculateTotalScore() {
   let totalScore = 0;
   
@@ -189,9 +212,9 @@ function calculateTotalScore() {
   return totalScore;
 }
 
+let selectedAnswers = new Array(questionArray.length).fill(null);
+
 // created a function for checking if the selected answer is === correct answer
-
-
 function checkAnswer(selectedAnswer) {
   if (selectedAnswers[currentQuestionIndex] === null) {
     if (selectedAnswer === correct_answer[currentQuestionIndex]) {
@@ -202,9 +225,6 @@ function checkAnswer(selectedAnswer) {
       console.log("Wrong answer!");
       console.log(score);
     }
-    
-   
-
     selectedAnswers[currentQuestionIndex] = selectedAnswer;
     currentQuestionIndex++; // Move to the next question
 
@@ -212,27 +232,52 @@ function checkAnswer(selectedAnswer) {
       
       showQuestion(); // Show the next question
     } else {
+      clearInterval(timerId)
       window.location.href = '/result.html';
 
       // All questions answered, display total score
       const totalScore = calculateTotalScore();
       console.log("Total score:", totalScore);
+
       // Display the score on the user's screen
       document.getElementById("score").innerText = "Score: " + totalScore;
+
+      // setted a local storage for getting the score value and taking it into the next page 
       localStorage.setItem('totalScore', totalScore);
     }
   }
 }
+// created a function to change the question if the time is up
 
+function timeUp() {
+  currentQuestionIndex++;
+  showQuestion();
+}
 
+// created a function for starting the timer and updating the timer display
+function startTimer() {
 
+  // recalled the function updateTimerDisplay so i can use it inside the startTimer
+  updateTimerDisplay()
 
-let selectedAnswers = new Array(questionArray.length).fill(null);
+// setted an interval to reduce the time remaining
+  timerId = setInterval(function () {
+    timeRemaining--
+    // called the function for updating the display
+    updateTimerDisplay()
+    
+  
+    if (timeRemaining <= 0) {
+      
+
+      // recalled timeUp so it goes to the next question
+      timeUp();
+    }
+  }, 1000) 
+}
+startTimer()
 showQuestion();
 
-<<<<<<< Updated upstream
-=======
-showQuestion()
 
 
->>>>>>> Stashed changes
+
