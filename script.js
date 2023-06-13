@@ -154,8 +154,22 @@ function showQuestion() {
 
   // question number displayed
   let questionNumberElement = document.createElement("p");
-  questionNumberElement.innerText = "Question " + (currentQuestionIndex + 1) + "/" + questionArray.length
+  questionNumberElement.innerText = "QUESTION " + (currentQuestionIndex + 1);
+  
+  const slashElement = document.createElement("span");
+  slashElement.innerText = "/";
+  
+  const totalQuestionsElement = document.createElement("span");
+  totalQuestionsElement.innerText = questionArray.length;
+  
+  // Apply CSS classes to the elements
   questionNumberElement.classList.add("question-number");
+  slashElement.classList.add("slash");
+  totalQuestionsElement.classList.add("total-questions");
+  
+  // Append the elements to the parent element
+  questionNumberElement.appendChild(slashElement);
+  questionNumberElement.appendChild(totalQuestionsElement);
 
   // setting a local storage, for taking the value to the next page
   localStorage.setItem('questionLength', questionArray.length);

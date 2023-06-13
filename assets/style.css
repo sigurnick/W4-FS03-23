@@ -106,6 +106,9 @@ button{
 }
 
 .question-number{
+    letter-spacing: 0.1cm;
+    display: flex;
+    justify-content: center;
     margin-top: 3em;
 }
 .selected {
@@ -118,4 +121,12 @@ button{
     margin-right: 2em;
     margin-bottom: 2em;
   }
-  
+  .slash{
+    padding-left: 0.4em ;
+    color: #D20094;
+  }
+  .total-questions{
+    color: #D20094;
+    padding-left: 0.4em ;
+
+  }
