@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/assets/result-style.css" />
     <!-- script per inserire i chart -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- script plugin chart -->
+  
+
     <title>Result Page</title>
   </head>
   <body>
@@ -32,6 +35,15 @@
           <div class="chartCard">
             <div class="chartBox">
               <canvas id="myChart"></canvas>
+
+              <div id="chartOverlay">
+               
+              </div>
+
+
+              <canvas id="myChart"></canvas>
+
+              
             </div>
           </div>
 
@@ -39,6 +51,7 @@
           <div id="wrong-answers"><h2>Wrong</h2></div>
         
       </div>
+      <div id="bottom-block"><button id="rate-us-button">RATE US</button></div>
     </main>
 
     <script src="/result-script.js"></script>
