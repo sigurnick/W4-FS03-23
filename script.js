@@ -142,9 +142,12 @@ function showQuestion() {
   questionNumberElement.innerText = "Question " + (currentQuestionIndex + 1) + "/" + questionArray.length
   questionNumberElement.classList.add("question-number");
 
+  localStorage.setItem('questionLength', questionArray.length);
+
   let questionElement = document.createElement("h1");
   questionElement.innerText = questionArray[currentQuestionIndex];
   questionElement.classList.add('question')
+  
 
   let answerElement = document.createElement("div");
   answerElement.classList.add("answer-list");
@@ -154,9 +157,9 @@ function showQuestion() {
     answerItem.classList.add('answer-item')
       answerItem.innerText = answer;
 // add an eventlistener for selecting the answer 
-    answerItem.addEventListener("click", function () {
+    answerItem.addEventListener("click", function (event) {
       checkAnswer(answerItem.innerText);
-      // event.target.classList.add('selected');
+      event.target.classList.add('selected');
       
     });
 
@@ -209,7 +212,8 @@ function checkAnswer(selectedAnswer) {
       
       showQuestion(); // Show the next question
     } else {
-      // window.location.href = '/result.html';
+      window.location.href = '/result.html';
+
       // All questions answered, display total score
       const totalScore = calculateTotalScore();
       console.log("Total score:", totalScore);
