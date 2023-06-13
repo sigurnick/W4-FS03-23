@@ -96,93 +96,111 @@ const questions = [
   },
 ];
 
-//global variable
+// Global variable
 let score = 0;
 let questionDiv = document.getElementById("question");
 let answerDiv = document.getElementById("answers"); 
-// variable for correct answers only
-const correct_answer = ["Central Processing Unit", "Final", "False", "False",".svg","Cascading Style Sheet","Nougat","140","False","Java",]
-console.log(correct_answer)
 
-// making a function for picking the questions and putting them into the array
+// Variable for correct answers only
+const correct_answer = ["Central Processing Unit", "Final", "False", "False",".svg","Cascading Style Sheet","Nougat","140","False","Java"];
+console.log(correct_answer);
+
+// Function for picking the questions and putting them into the array
 const questionPicker = function () {
   let question = [];
   questions.forEach((element) => {
     question.push(element.question);
   });
   return question;
-};
-// making a function for picking the answers (both wrong and right), and putting them into the array
+}
+
+// Function for picking the answers (both wrong and right) and putting them into the array
 const answers = function () {
   let answer = [];
   questions.forEach((element) => {
     answer.push(element.answers);
-   
   });
   return answer;
-};
+}
 
 const questionArray = questionPicker();
 const answerArray = answers();
-console.log(questionArray)
-console.log (answerArray)
+console.log(questionArray);
+console.log(answerArray);
 
 
-// making a for cicle for the question and adding them into a div and then into an h1
+let currentQuestionIndex = 0; // Track the current question index
 
-for (let i = 0; i < questionArray.length; i++) {
+// Loop through the questions and add them to the DOM
+function showQuestion() {
   let questionContainer = document.createElement("div");
   questionContainer.classList.add("question-container");
 
   let questionElement = document.createElement("h1");
-  questionElement.innerText = questionArray[i];
+  questionElement.innerText = questionArray[currentQuestionIndex];
 
   let answerElement = document.createElement("div");
   answerElement.classList.add("answer-list");
-// making a for.each cicle for the answers and adding them into a p
-  answerArray[i].forEach((answer) => {
+
+  answerArray[currentQuestionIndex].forEach((answer) => {
     let answerItem = document.createElement("p");
     answerItem.innerText = answer;
-// adding an eventlistener for the click on a p 
-    answerItem.addEventListener("click",  function () {
-      checkAnswer(answerItem.innerText, i);
+
+    answerItem.addEventListener("click", function () {
+      checkAnswer(answerItem.innerText);
     });
+
     answerElement.appendChild(answerItem);
   });
 
   questionContainer.appendChild(questionElement);
   questionContainer.appendChild(answerElement);
 
+  questionDiv.innerHTML = ""; // Clear the previous question
   questionDiv.appendChild(questionContainer);
 }
-
-function checkAnswer(selectedAnswer, questionIndex) {
-  if (selectedAnswer === correct_answer[questionIndex]) {
-    score++;
-    console.log(score);
-    console.log("Correct answer!");
-  } else {
-    console.log("Wrong answer!");
-  }
-}
-
-// Function to calculate the total score
 function calculateTotalScore() {
   let totalScore = 0;
+  
   for (let i = 0; i < correct_answer.length; i++) {
-    if (answerArray[i].includes(correct_answer[i])) {
+    if (selectedAnswers[i] === correct_answer[i]) {
       totalScore++;
     }
   }
+  
   return totalScore;
 }
 
+function checkAnswer(selectedAnswer) {
+  if (selectedAnswers[currentQuestionIndex] === null) {
+    if (selectedAnswer === correct_answer[currentQuestionIndex]) {
+      score++;
+      console.log("Correct answer!");
+      console.log(score)
+    } else {
+      console.log("Wrong answer!");
+      console.log(score)
+      
+    }
 
-const totalScore = calculateTotalScore();
-console.log("Total score:", totalScore);
+    selectedAnswers[currentQuestionIndex] = selectedAnswer;
+    currentQuestionIndex++; // Move to the next question
+    if (currentQuestionIndex < questionArray.length) {
+      showQuestion(); // Show the next question
+    } else {
+      // All questions answered, display total score
+      const totalScore = calculateTotalScore();
+      console.log("Total score:", totalScore);
+      // Display the score on the page or perform any other action you desire
+      document.getElementById("score").innerText = "Score: " + totalScore;
+    }
+
+  }
+  
+}
 
 
 
-
-
+let selectedAnswers = new Array(questionArray.length).fill(null);
+showQuestion();
 
