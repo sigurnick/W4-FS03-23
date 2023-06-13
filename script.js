@@ -145,7 +145,10 @@ let currentQuestionIndex = 0; // Track the current question index
 // Loop through the questions and add them to the DOM
 function showQuestion() {
   timeRemaining = 60;
+
+  // added the updateTimerDisplay for resetting the timer and starting it from 60s again
   updateTimerDisplay()
+
   let questionContainer = document.createElement("div");
   questionContainer.classList.add("question-container");
 
@@ -232,23 +235,22 @@ function checkAnswer(selectedAnswer) {
       
       showQuestion(); // Show the next question
     } else {
+
+      // cleared the interval for not letting the time run when the questions are finished
       clearInterval(timerId)
+
       window.location.href = '/result.html';
 
       // All questions answered, display total score
       const totalScore = calculateTotalScore();
-      console.log("Total score:", totalScore);
-
-      // Display the score on the user's screen
-      document.getElementById("score").innerText = "Score: " + totalScore;
 
       // setted a local storage for getting the score value and taking it into the next page 
       localStorage.setItem('totalScore', totalScore);
     }
   }
 }
-// created a function to change the question if the time is up
 
+// created a function to change the question if the time is up
 function timeUp() {
   currentQuestionIndex++;
   showQuestion();
@@ -263,18 +265,19 @@ function startTimer() {
 // setted an interval to reduce the time remaining
   timerId = setInterval(function () {
     timeRemaining--
+
     // called the function for updating the display
     updateTimerDisplay()
     
   
     if (timeRemaining <= 0) {
       
-
       // recalled timeUp so it goes to the next question
       timeUp();
     }
   }, 1000) 
 }
+
 startTimer()
 showQuestion();
 
