@@ -17,7 +17,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     // correct_answer: "Final",
     answers: ["Final","Static", "Private", "Public"],
   },
@@ -136,8 +136,15 @@ function showQuestion() {
   let questionContainer = document.createElement("div");
   questionContainer.classList.add("question-container");
 
+  // question number displayed
+
+  let questionNumberElement = document.createElement("p");
+  questionNumberElement.innerText = "Question " + (currentQuestionIndex + 1) + "/" + questionArray.length
+  questionNumberElement.classList.add("question-number");
+
   let questionElement = document.createElement("h1");
   questionElement.innerText = questionArray[currentQuestionIndex];
+  questionElement.classList.add('question')
 
   let answerElement = document.createElement("div");
   answerElement.classList.add("answer-list");
@@ -155,8 +162,10 @@ function showQuestion() {
     answerElement.appendChild(answerItem);
   });
 
+  
   questionContainer.appendChild(questionElement);
   questionContainer.appendChild(answerElement);
+  questionContainer.appendChild(questionNumberElement);
 
   questionDiv.innerHTML = ""; // Clear the previous question
   questionDiv.appendChild(questionContainer);
