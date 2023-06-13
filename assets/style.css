@@ -91,9 +91,7 @@ button{
     padding-bottom: 1em;
     
   }
-  .answer-item:active{
-   background-color: #D20094;
-  }
+ 
   .answer-item {
     background-color: transparent;
     width: 20em;
@@ -111,5 +109,12 @@ button{
     margin-top: 10em;
 }
 .selected {
-    background-color: #e0e0e0;
+    background-color:#D20094
+  }
+  #timer{
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 2em;
+    margin-right: 2em;
+    margin-bottom: 2em;
   }
