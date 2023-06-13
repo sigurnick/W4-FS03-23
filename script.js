@@ -156,6 +156,7 @@ function showQuestion() {
 // add an eventlistener for selecting the answer 
     answerItem.addEventListener("click", function () {
       checkAnswer(answerItem.innerText);
+      // event.target.classList.add('selected');
       
     });
 
@@ -193,33 +194,32 @@ function checkAnswer(selectedAnswer) {
     if (selectedAnswer === correct_answer[currentQuestionIndex]) {
       score++;
       console.log("Correct answer!");
-      console.log(score)
+      console.log(score);
     } else {
       console.log("Wrong answer!");
-      console.log(score)
-      
+      console.log(score);
     }
+    
+   
 
     selectedAnswers[currentQuestionIndex] = selectedAnswer;
     currentQuestionIndex++; // Move to the next question
-    
+
     if (currentQuestionIndex < questionArray.length) {
+      
       showQuestion(); // Show the next question
     } else {
+      // window.location.href = '/result.html';
       // All questions answered, display total score
       const totalScore = calculateTotalScore();
       console.log("Total score:", totalScore);
-    //  displayed the score on the users screen 
+      // Display the score on the user's screen
       document.getElementById("score").innerText = "Score: " + totalScore;
-<<<<<<< Updated upstream
-=======
-      localStorage.setItem('totalScore', totalScore)
->>>>>>> Stashed changes
+      localStorage.setItem('totalScore', totalScore);
     }
-
   }
-  
 }
+
 
 
 

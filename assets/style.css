@@ -83,7 +83,17 @@ button{
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+   
+  .answer-item:hover{
+    background-color: #D20094;
+    cursor: pointer;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    
+  }
+  .answer-item:active{
+   background-color: #D20094;
+  }
   .answer-item {
     background-color: transparent;
     width: 20em;
@@ -100,3 +110,6 @@ button{
 .question-number{
     margin-top: 10em;
 }
+.selected {
+    background-color: #e0e0e0;
+  }
