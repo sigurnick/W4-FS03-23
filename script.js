@@ -230,3 +230,9 @@ function checkAnswer(selectedAnswer) {
 let selectedAnswers = new Array(questionArray.length).fill(null);
 showQuestion();
 
+<<<<<<< Updated upstream
+=======
+showQuestion()
+
+
+>>>>>>> Stashed changes
