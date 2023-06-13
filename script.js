@@ -155,17 +155,31 @@ for (let i = 0; i < questionArray.length; i++) {
 
   questionDiv.appendChild(questionContainer);
 }
-// creating a function to check if the clicked answer is correct or not
+
 function checkAnswer(selectedAnswer, questionIndex) {
   if (selectedAnswer === correct_answer[questionIndex]) {
     score++;
-    
+    console.log(score);
     console.log("Correct answer!");
   } else {
     console.log("Wrong answer!");
   }
-
 }
+
+// Function to calculate the total score
+function calculateTotalScore() {
+  let totalScore = 0;
+  for (let i = 0; i < correct_answer.length; i++) {
+    if (answerArray[i].includes(correct_answer[i])) {
+      totalScore++;
+    }
+  }
+  return totalScore;
+}
+
+
+const totalScore = calculateTotalScore();
+console.log("Total score:", totalScore);
 
 
 
