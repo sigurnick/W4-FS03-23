@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.676);
+    
+  }
+
+  h1{
+    font-size: 4em;
+    margin: 0;
+  }
+
+  .chartMenu p {
+    padding: 10px;
+    font-size: 20px;
+  }
+  .chartCard {
+    width: 40vw;
+    height: calc(100vh - 40px);
+    background: rgba(54, 163, 235, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chartBox {
+    width: 700px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0);
+  }
+
+  #result-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #result-block h2{
+    font-size: 3em;
+    font-weight: 300;
+  }
+
+  #title-block{
+    text-align: center;
+  }
+
+  #title-block p{
+font-size: 1.5em;
+font-weight:300;
+  }
+
+  #result-block p{
+    font-size: 1.2em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
