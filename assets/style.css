@@ -1,120 +1,165 @@
-body{
-   
-    background-repeat: no-repeat;
-    background-size: cover;
-     margin-left: 5em;
-    background-image: url(../assets/bg.jpg);
-}
-.logo{
-    max-width:7em ;
-   margin-top: 2em;
-   margin-bottom: 4em;
-}
-h1{
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
-    font-size: 3.5em;
-    color: white;
-    margin-bottom: 0.5em;
+html {
+  background-color: #000000;
+  margin: auto;
 }
-b{
-    font-weight: bold;
+
+body {
+  font-family: sans-serif;
+  background-image: url("../assets/bg.jpg");
+  background-attachment: fixed;
+  background-position: bottom;
+  color: white;
+  margin: auto;
+  max-width: 900px;
 }
-h3{
-  color:#D20094 ;
+
+.logo {
+  max-width: 7em;
+  margin-top: 30px;
+  margin-bottom: 4em;
+}
+h1 {
+  font-size: 3.5em;
+  color: white;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 4em;
+  /* color: white; */
+  margin-bottom: 0.5em;
+  line-height: 1;
+}
+
+b {
+  font-weight: 900;
+}
+
+h3 {
+  color: #d20094;
   font-size: 1.5em;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 0.3em;
 }
-p{
-    color: white;
+
+p {
+  display: inline;
 }
 
 ul {
-    margin-top:2.7em;
-    color: white;
-    margin-left: 2em;
-    margin-bottom: 6em;
+  margin-top: 2.7em;
 }
 
-ul li{
-    margin-top: 0.5em;
+ul li {
+  margin-top: 0.5em;
 }
 
-.form{
-    display: flex;
- 
-}
-/* form p{
-    display: inline;
-} */
-
-button{
-    
-    font-size: 1.2em;
-    font-weight: bold;
-    background-color: #00FFFF;
-    margin-left: 30em;
-    width: 12em;
-   padding: 1em 2em;
-   box-shadow: 1px 1px 7px 6px #00FFFF;
-   border: 1px;
-     
+button {
+  display: inline;
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #00ffff;
+  width: 12em;
+  padding: 1em 2em;
+  box-shadow: 1px 1px 7px 6px #00ffff;
+  border: 1px;
+  margin-top: 75px;
+  margin-bottom: 75px;
+  margin-left: 150px;
 }
 
-#score{
-    color: white;
-    font-size: 2em;
-    margin-top: 5em;
+.container {
+  padding-left: 70px;
 }
 
-.question{
-    font-size: 2.5em;
-    display: flex;
-    justify-content: center;
+form p {
+  font-weight: bold;
 }
-.question-container{
-    margin-right: 5em;
+#score {
+  color: white;
+  font-size: 2em;
+  margin-top: 5em;
+}
+
+.question {
+  font-size: 2.5em;
+  display: flex;
+  justify-content: center;
+}
+.question-container {
+  margin-right: 5em;
 }
 .answer-list {
-    margin-top: 7em;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-   
-  .answer-item:hover{
-    background-color: #D20094;
-    cursor: pointer;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    
-  }
- 
-  .answer-item {
-    background-color: transparent;
-    width: 20em;
-    font-size: 1.5em;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    margin-left: 20px;
-    border: solid white 1px;
-    border-radius: 40px;
-    box-shadow: -6px -1px 15px 2px #FFFFFF;
+  margin-top: 7em;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.question-number{
-    margin-top: 10em;
+.answer-item:hover {
+  background-color: #d20094;
+  cursor: pointer;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.answer-item {
+  background-color: transparent;
+  width: 20em;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-left: 20px;
+  border: solid white 1px;
+  border-radius: 40px;
+  box-shadow: -6px -1px 15px 2px #ffffff;
+  margin-top: 7em;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.answer-item:hover {
+  background-color: #d20094;
+  cursor: pointer;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.answer-item:active {
+  background-color: #d20094;
+}
+.answer-item {
+  background-color: transparent;
+  width: 20em;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-left: 20px;
+  border: solid white 1px;
+  border-radius: 40px;
+  box-shadow: -6px -1px 15px 2px #ffffff;
+}
+
+.question-number {
+  margin-top: 10em;
 }
 .selected {
-    background-color:#D20094
-  }
-  #timer{
-    display: flex;
-    flex-direction: row-reverse;
-    font-size: 2em;
-    margin-right: 2em;
-    margin-bottom: 2em;
-  }
+  background-color: #d20094;
+}
+#timer {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 2em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+}
