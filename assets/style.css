@@ -20,6 +20,11 @@ body {
   margin-top: 30px;
   margin-bottom: 4em;
 }
+h1 {
+  font-size: 3.5em;
+  color: white;
+  margin-bottom: 0.5em;
+}
 
 h1 {
   font-family: "Lato", sans-serif;
@@ -73,4 +78,55 @@ button {
 
 form p {
   font-weight: bold;
+}
+#score {
+  color: white;
+  font-size: 2em;
+  margin-top: 5em;
+}
+
+.question {
+  font-size: 2.5em;
+  display: flex;
+  justify-content: center;
+}
+.question-container {
+  margin-right: 5em;
+}
+.answer-list {
+  margin-top: 7em;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.answer-item:hover {
+  background-color: #d20094;
+  cursor: pointer;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.answer-item:active {
+  background-color: #d20094;
+}
+.answer-item {
+  background-color: transparent;
+  width: 20em;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin-left: 20px;
+  border: solid white 1px;
+  border-radius: 40px;
+  box-shadow: -6px -1px 15px 2px #ffffff;
+}
+
+.question-number {
+  margin-top: 10em;
+}
+.selected {
+  background-color: #e0e0e0;
 }

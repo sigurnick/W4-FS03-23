@@ -17,7 +17,7 @@ const questions = [
     type: "multiple",
     difficulty: "easy",
     question:
-      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn&#039;t get modified?",
+      "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
     // correct_answer: "Final",
     answers: ["Final","Static", "Private", "Public"],
   },
@@ -96,79 +96,137 @@ const questions = [
   },
 ];
 
-//global variable
+// Global variable
 let score = 0;
 let questionDiv = document.getElementById("question");
 let answerDiv = document.getElementById("answers"); 
-// variable for correct answers only
-const correct_answer = ["Central Processing Unit", "Final", "False", "False",".svg","Cascading Style Sheet","Nougat","140","False","Java",]
-console.log(correct_answer)
 
-// making a function for picking the questions and putting them into the array
+// Variable for correct answers only
+const correct_answer = ["Central Processing Unit", "Final", "False", "False",".svg","Cascading Style Sheet","Nougat","140","False","Java"];
+console.log(correct_answer);
+
+// Function for picking the questions and putting them into the array
 const questionPicker = function () {
   let question = [];
   questions.forEach((element) => {
     question.push(element.question);
   });
   return question;
-};
-// making a function for picking the answers (both wrong and right), and putting them into the array
+}
+
+// Function for picking the answers (both wrong and right) and putting them into the array
 const answers = function () {
   let answer = [];
   questions.forEach((element) => {
     answer.push(element.answers);
-   
   });
   return answer;
-};
+}
 
 const questionArray = questionPicker();
 const answerArray = answers();
-console.log(questionArray)
-console.log (answerArray)
+console.log(questionArray);
+console.log(answerArray);
 
 
-// making a for cicle for the question and adding them into a div and then into an h1
+let currentQuestionIndex = 0; // Track the current question index
 
-for (let i = 0; i < questionArray.length; i++) {
+// Loop through the questions and add them to the DOM
+function showQuestion() {
   let questionContainer = document.createElement("div");
   questionContainer.classList.add("question-container");
 
+  // question number displayed
+
+  let questionNumberElement = document.createElement("p");
+  questionNumberElement.innerText = "Question " + (currentQuestionIndex + 1) + "/" + questionArray.length
+  questionNumberElement.classList.add("question-number");
+
+  localStorage.setItem('questionLength', questionArray.length);
+
   let questionElement = document.createElement("h1");
-  questionElement.innerText = questionArray[i];
+  questionElement.innerText = questionArray[currentQuestionIndex];
+  questionElement.classList.add('question')
+  
 
   let answerElement = document.createElement("div");
   answerElement.classList.add("answer-list");
-// making a for.each cicle for the answers and adding them into a p
-  answerArray[i].forEach((answer) => {
+// created a for each, that create a element p for every answer 
+  answerArray[currentQuestionIndex].forEach((answer) => {
     let answerItem = document.createElement("p");
-    answerItem.innerText = answer;
-// adding an eventlistener for the click on a p 
-    answerItem.addEventListener("click",  function () {
-      checkAnswer(answerItem.innerText, i);
+    answerItem.classList.add('answer-item')
+      answerItem.innerText = answer;
+// add an eventlistener for selecting the answer 
+    answerItem.addEventListener("click", function (event) {
+      checkAnswer(answerItem.innerText);
+      event.target.classList.add('selected');
+      
     });
+
     answerElement.appendChild(answerItem);
   });
 
+  
   questionContainer.appendChild(questionElement);
   questionContainer.appendChild(answerElement);
+  questionContainer.appendChild(questionNumberElement);
 
+  questionDiv.innerHTML = ""; // Clear the previous question
   questionDiv.appendChild(questionContainer);
 }
-// creating a function to check if the clicked answer is correct or not
-function checkAnswer(selectedAnswer, questionIndex) {
-  if (selectedAnswer === correct_answer[questionIndex]) {
-    score++;
-    
-    console.log("Correct answer!");
-  } else {
-    console.log("Wrong answer!");
-  }
 
+// created a function to calculate the total score of the user
+
+function calculateTotalScore() {
+  let totalScore = 0;
+  
+  for (let i = 0; i < correct_answer.length; i++) {
+    if (selectedAnswers[i] === correct_answer[i]) {
+      totalScore++;
+    }
+  }
+  
+  return totalScore;
+}
+
+// created a function for checking if the selected answer is === correct answer
+
+
+function checkAnswer(selectedAnswer) {
+  if (selectedAnswers[currentQuestionIndex] === null) {
+    if (selectedAnswer === correct_answer[currentQuestionIndex]) {
+      score++;
+      console.log("Correct answer!");
+      console.log(score);
+    } else {
+      console.log("Wrong answer!");
+      console.log(score);
+    }
+    
+   
+
+    selectedAnswers[currentQuestionIndex] = selectedAnswer;
+    currentQuestionIndex++; // Move to the next question
+
+    if (currentQuestionIndex < questionArray.length) {
+      
+      showQuestion(); // Show the next question
+    } else {
+      window.location.href = '/result.html';
+
+      // All questions answered, display total score
+      const totalScore = calculateTotalScore();
+      console.log("Total score:", totalScore);
+      // Display the score on the user's screen
+      document.getElementById("score").innerText = "Score: " + totalScore;
+      localStorage.setItem('totalScore', totalScore);
+    }
+  }
 }
 
 
 
 
-
+let selectedAnswers = new Array(questionArray.length).fill(null);
+showQuestion();
 
