@@ -211,6 +211,10 @@ function checkAnswer(selectedAnswer) {
       console.log("Total score:", totalScore);
     //  displayed the score on the users screen 
       document.getElementById("score").innerText = "Score: " + totalScore;
+<<<<<<< Updated upstream
+=======
+      localStorage.setItem('totalScore', totalScore)
+>>>>>>> Stashed changes
     }
 
   }
