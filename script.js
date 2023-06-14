@@ -145,14 +145,31 @@ let currentQuestionIndex = 0; // Track the current question index
 // Loop through the questions and add them to the DOM
 function showQuestion() {
   timeRemaining = 60;
+
+  // added the updateTimerDisplay for resetting the timer and starting it from 60s again
   updateTimerDisplay()
+
   let questionContainer = document.createElement("div");
   questionContainer.classList.add("question-container");
 
   // question number displayed
   let questionNumberElement = document.createElement("p");
-  questionNumberElement.innerText = "Question " + (currentQuestionIndex + 1) + "/" + questionArray.length
+  questionNumberElement.innerText = "QUESTION " + (currentQuestionIndex + 1);
+  
+  const slashElement = document.createElement("span");
+  slashElement.innerText = "/";
+  
+  const totalQuestionsElement = document.createElement("span");
+  totalQuestionsElement.innerText = questionArray.length;
+  
+  // Apply CSS classes to the elements
   questionNumberElement.classList.add("question-number");
+  slashElement.classList.add("slash");
+  totalQuestionsElement.classList.add("total-questions");
+  
+  // Append the elements to the parent element
+  questionNumberElement.appendChild(slashElement);
+  questionNumberElement.appendChild(totalQuestionsElement);
 
   // setting a local storage, for taking the value to the next page
   localStorage.setItem('questionLength', questionArray.length);
@@ -193,10 +210,7 @@ answerArray[currentQuestionIndex].forEach((answer) => {
   // created a .innerHTML for resetting the question and pushing the next one
   questionDiv.innerHTML = ""; 
   questionDiv.appendChild(questionContainer);
-
-  // recalled the function so it starts the time whenever you are in the question page
-  
- 
+      
 }
 
 // created a function to calculate the total score of the user
@@ -232,23 +246,22 @@ function checkAnswer(selectedAnswer) {
       
       showQuestion(); // Show the next question
     } else {
+
+      // cleared the interval for not letting the time run when the questions are finished
       clearInterval(timerId)
+
       window.location.href = '/result.html';
 
       // All questions answered, display total score
       const totalScore = calculateTotalScore();
-      console.log("Total score:", totalScore);
-
-      // Display the score on the user's screen
-      document.getElementById("score").innerText = "Score: " + totalScore;
 
       // setted a local storage for getting the score value and taking it into the next page 
       localStorage.setItem('totalScore', totalScore);
     }
   }
 }
-// created a function to change the question if the time is up
 
+// created a function to change the question if the time is up
 function timeUp() {
   currentQuestionIndex++;
   showQuestion();
@@ -263,18 +276,19 @@ function startTimer() {
 // setted an interval to reduce the time remaining
   timerId = setInterval(function () {
     timeRemaining--
+
     // called the function for updating the display
     updateTimerDisplay()
     
   
     if (timeRemaining <= 0) {
       
-
       // recalled timeUp so it goes to the next question
       timeUp();
     }
   }, 1000) 
 }
+
 startTimer()
 showQuestion();
 
