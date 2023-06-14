@@ -112,3 +112,14 @@ const resultChart = function (correctAnswers, totQuestion) {
 
 resultChart(totalScore, questions);
 // resultChart(4, 13);
+
+
+
+
+//button event
+let button=document.getElementById('rate-us-button')
+button.addEventListener('click',function (e){
+   
+        window.location.href = '/feedback.html';
+    
+})
