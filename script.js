@@ -210,10 +210,7 @@ answerArray[currentQuestionIndex].forEach((answer) => {
   // created a .innerHTML for resetting the question and pushing the next one
   questionDiv.innerHTML = ""; 
   questionDiv.appendChild(questionContainer);
-
-  // recalled the function so it starts the time whenever you are in the question page
-  
- 
+      
 }
 
 // created a function to calculate the total score of the user
