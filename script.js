@@ -167,10 +167,6 @@ function showQuestion() {
   slashElement.classList.add("slash");
   totalQuestionsElement.classList.add("total-questions");
   
-  // Append the elements to the parent element
-  questionNumberElement.appendChild(slashElement);
-  questionNumberElement.appendChild(totalQuestionsElement);
-
   // setting a local storage, for taking the value to the next page
   localStorage.setItem('questionLength', questionArray.length);
 
@@ -206,6 +202,8 @@ answerArray[currentQuestionIndex].forEach((answer) => {
   questionContainer.appendChild(questionElement);
   questionContainer.appendChild(answerElement);
   questionContainer.appendChild(questionNumberElement);
+  questionNumberElement.appendChild(slashElement);
+  questionNumberElement.appendChild(totalQuestionsElement);
 
   // created a .innerHTML for resetting the question and pushing the next one
   questionDiv.innerHTML = ""; 
