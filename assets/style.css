@@ -3,6 +3,7 @@
 
 
 body {
+  
   font-family: 'Inter', sans-serif;
   background-image: url("../assets/bg.jpg");
   background-repeat: no-repeat;
@@ -155,10 +156,105 @@ form p {
   padding-left: 0.4em ;
 
 }
-#circle{
-  margin-left: 80em;
+#circle {
+  position: absolute;
+  top: 10%;
+  right: 40px;
+  transform: translateY(-50%);
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 5px solid  #00ffff;
+  border: 5px solid #00ffff;
+}
+
+/* Responsive Styles */
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .logo {
+    max-width: 5em;
+    margin-top: 20px;
+    margin-bottom: 2em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.3em;
+  }
+
+  h1,
+  h3 {
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  ul li {
+    margin-left: 1em;
+  }
+
+  .answer-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #circle {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+/* Medium screens */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .logo {
+    max-width: 6em;
+    margin-top: 25px;
+    margin-bottom: 3em;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.4em;
+  }
+
+  button {
+    width: 10em;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 120px;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 1025px) {
+ 
+  .container {
+    padding-left: 70px;
+  }
+
+  .logo {
+    max-width: 7em;
+    margin-top: 30px;
+    margin-bottom: 4em;
+  }
+
+  h1 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+  }
 }
