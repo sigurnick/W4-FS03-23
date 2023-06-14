@@ -103,11 +103,11 @@ let questionDiv = document.getElementById("question");
 let answerDiv = document.getElementById("answers"); 
 let timeRemaining = 60; 
 
-
 // created a function for the display of the time in the page
 function updateTimerDisplay() {
   const timerDisplay = document.getElementById("timer");
   timerDisplay.innerText = timeRemaining ;
+  
 }
 
 
