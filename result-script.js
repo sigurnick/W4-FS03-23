@@ -51,21 +51,25 @@ const resultChart = function (correctAnswers, totQuestion) {
     document.getElementById("chartOverlay").innerHTML = `
   <h4>I'm sorry,</h4>
   <h4 id="exam-failed">You failed the exam.</h4>
+  </br></br>
+  <p>We'll send you the results in few minutes. </br> Check your email (including promotions / spam folder)</p>
  
   `;
   }
 
   //--------------------Chart-----------------------
   // setup
+
   const data = {
     datasets: [
       {
         label: "Answers",
-        data: [correctAnswers, wrongAnswers],
-        backgroundColor: ["#00FFFF", "#D20094"],
-        borderColor: ["#00FFFF", "#D20094"],
+        data: [wrongAnswers, correctAnswers],
+        backgroundColor: ["#D20094", "#00FFFF"],
+        borderColor: ["#D20094", "#00FFFF"],
         borderWidth: 1,
         cutout: "75%",
+        //rotation: -90 //
       },
     ],
   };
@@ -74,11 +78,30 @@ const resultChart = function (correctAnswers, totQuestion) {
   const config = {
     type: "doughnut",
     data,
-    options: {},
+    options: {
+      plugins: {
+        annotation: {
+          annotations: [
+            {
+              type: "text",
+              x: "50%",
+              y: "50%",
+              text: "Testo personalizzato",
+              fontColor: "orange",
+              fontSize: 20,
+              backgroundColor: "rgba(255, 255, 255, 0.8)",
+              textAlign: "center",
+              xAdjust: 0,
+              yAdjust: 0,
+            },
+          ],
+        },
+      },
+    },
 
     elements: {
       arc: {
-        backgroundColor: "rgba(255, 255, 255, 0.8)", 
+        backgroundColor: "rgba(255, 255, 255, 0.8)",
       },
     },
   };
@@ -88,4 +111,4 @@ const resultChart = function (correctAnswers, totQuestion) {
 };
 
 resultChart(totalScore, questions);
-// resultChart(10, 13);
+// resultChart(4, 13);
