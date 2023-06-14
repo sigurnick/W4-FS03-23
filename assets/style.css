@@ -1,21 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
-html {
-  background-color: #000000;
-  margin: auto;
-}
+
 
 body {
-  font-family: sans-serif;
+  
+  font-family: 'Inter', sans-serif;
   background-image: url("../assets/bg.jpg");
-  background-attachment: fixed;
-  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
-  margin: auto;
-  max-width: 900px;
+ 
+ 
 }
 
 .logo {
+
   max-width: 7em;
   margin-top: 30px;
   margin-bottom: 4em;
@@ -27,7 +26,7 @@ h1 {
 }
 
 h1 {
-  font-family: "Lato", sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 400;
   font-size: 4em;
   /* color: white; */
@@ -56,8 +55,12 @@ ul {
 
 ul li {
   margin-top: 0.5em;
+  margin-left: 1.6em;
 }
 
+button:hover{
+  cursor: pointer;
+}
 button {
   display: inline;
   font-size: 1.2em;
@@ -79,19 +82,23 @@ button {
 form p {
   font-weight: bold;
 }
-#score {
+#epicode{
+  margin-left: 5em;
+}
+#score{
   color: white;
   font-size: 2em;
   margin-top: 5em;
 }
 
-.question {
+.question{
   font-size: 2.5em;
   display: flex;
   justify-content: center;
 }
-.question-container {
+.question-container{
   margin-right: 5em;
+  margin-left: 5em;
 }
 .answer-list {
   margin-top: 7em;
@@ -101,12 +108,13 @@ form p {
   flex-wrap: wrap;
   justify-content: center;
 }
-
-.answer-item:hover {
-  background-color: #d20094;
+ 
+.answer-item:hover{
+  background-color: #D20094;
   cursor: pointer;
   padding-top: 1em;
   padding-bottom: 1em;
+  
 }
 
 .answer-item {
@@ -117,49 +125,136 @@ form p {
   justify-content: center;
   padding: 20px;
   margin-left: 20px;
-  border: solid white 1px;
+  border: 2px outset #FFFFFF;
   border-radius: 40px;
-  box-shadow: -6px -1px 15px 2px #ffffff;
-  margin-top: 7em;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  box-shadow:-3px -2px 15px -1px #FFFFFF;
 }
 
-.answer-item:hover {
-  background-color: #d20094;
-  cursor: pointer;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-.answer-item:active {
-  background-color: #d20094;
-}
-.answer-item {
-  background-color: transparent;
-  width: 20em;
-  font-size: 1.5em;
+.question-number{
+  letter-spacing: 0.1cm;
   display: flex;
   justify-content: center;
-  padding: 20px;
-  margin-left: 20px;
-  border: solid white 1px;
-  border-radius: 40px;
-  box-shadow: -6px -1px 15px 2px #ffffff;
-}
-
-.question-number {
-  margin-top: 10em;
+  margin-top: 3em;
 }
 .selected {
-  background-color: #d20094;
+  background-color:#D20094
 }
-#timer {
+#timer{
+  padding-left: 2.1em; 
   display: flex;
   flex-direction: row-reverse;
   font-size: 2em;
   margin-right: 2em;
   margin-bottom: 2em;
+}
+.slash{
+  padding-left: 0.4em ;
+  color: #D20094;
+}
+.total-questions{
+  color: #D20094;
+  padding-left: 0.4em ;
+
+}
+#circle {
+  position: absolute;
+  top: 10%;
+  right: 40px;
+  transform: translateY(-50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid #00ffff;
+}
+
+/* Responsive Styles */
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .logo {
+    max-width: 5em;
+    margin-top: 20px;
+    margin-bottom: 2em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.3em;
+  }
+
+  h1,
+  h3 {
+    text-align: center;
+  }
+
+  button {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  ul li {
+    margin-left: 1em;
+  }
+
+  .answer-item {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  #circle {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+/* Medium screens */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+  .container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .logo {
+    max-width: 6em;
+    margin-top: 25px;
+    margin-bottom: 3em;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.4em;
+  }
+
+  button {
+    width: 10em;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 120px;
+  }
+}
+
+/* Large screens */
+@media only screen and (min-width: 1025px) {
+ 
+  .container {
+    padding-left: 70px;
+  }
+
+  .logo {
+    max-width: 7em;
+    margin-top: 30px;
+    margin-bottom: 4em;
+  }
+
+  h1 {
+    font-size: 4em;
+    margin-bottom: 0.5em;
+  }
 }
