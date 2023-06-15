@@ -211,6 +211,8 @@ function showQuestion() {
   questionContainer.appendChild(questionElement);
   questionContainer.appendChild(answerElement);
   questionContainer.appendChild(questionNumberElement);
+  questionNumberElement.appendChild(slashElement);
+  questionNumberElement.appendChild(totalQuestionsElement);
 
   // created a .innerHTML for resetting the question and pushing the next one
   questionDiv.innerHTML = "";
