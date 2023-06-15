@@ -1,35 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
-
-
-
 body {
-  
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-image: url("../assets/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
- 
- 
 }
 
 .logo {
-
   max-width: 7em;
   margin-top: 30px;
   margin-bottom: 4em;
 }
-h1 {
-  font-size: 3.5em;
-  color: white;
-  margin-bottom: 0.5em;
-}
 
 h1 {
-  font-family: 'Outfit', sans-serif;
+  min-width: 1vw;
+  font-size: 6vw;
+  margin-bottom: 0.5em;
+  font-family: "Outfit", sans-serif;
   font-weight: 400;
-  font-size: 4em;
-  /* color: white; */
   margin-bottom: 0.5em;
   line-height: 1;
 }
@@ -40,25 +28,32 @@ b {
 
 h3 {
   color: #d20094;
-  font-size: 1.5em;
+  min-width: 0.5vw;
+  font-size: 2vw;
   font-weight: 700;
   margin-bottom: 0.3em;
 }
 
 p {
   display: inline;
+  line-height: initial;
+  min-width: 1vw;
+  font-size: 1.5vw;
 }
 
 ul {
   margin-top: 2.7em;
+  margin-bottom: 2.7em;
 }
 
 ul li {
   margin-top: 0.5em;
   margin-left: 1.6em;
+  min-width: 1vw;
+  font-size: 1.5vw;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
 }
 button {
@@ -68,7 +63,7 @@ button {
   background-color: #00ffff;
   width: 12em;
   padding: 1em 2em;
-  box-shadow: 1px 1px 7px 6px #00ffff;
+  box-shadow: 1px 1px 20px 1px #00ffff;
   border: 1px;
   margin-top: 75px;
   margin-bottom: 75px;
@@ -82,21 +77,21 @@ button {
 form p {
   font-weight: bold;
 }
-#epicode{
+#epicode {
   margin-left: 5em;
 }
-#score{
+#score {
   color: white;
   font-size: 2em;
   margin-top: 5em;
 }
 
-.question{
+.question {
   font-size: 2.5em;
   display: flex;
   justify-content: center;
 }
-.question-container{
+.question-container {
   margin-right: 5em;
   margin-left: 5em;
 }
@@ -108,13 +103,12 @@ form p {
   flex-wrap: wrap;
   justify-content: center;
 }
- 
-.answer-item:hover{
-  background-color: #D20094;
+
+.answer-item:hover {
+  background-color: #d20094;
   cursor: pointer;
   padding-top: 1em;
   padding-bottom: 1em;
-  
 }
 
 .answer-item {
@@ -125,36 +119,35 @@ form p {
   justify-content: center;
   padding: 20px;
   margin-left: 20px;
-  border: 2px outset #FFFFFF;
+  border: 2px outset #ffffff;
   border-radius: 40px;
-  box-shadow:-3px -2px 15px -1px #FFFFFF;
+  box-shadow: -3px -2px 15px -1px #ffffff;
 }
 
-.question-number{
+.question-number {
   letter-spacing: 0.1cm;
   display: flex;
   justify-content: center;
   margin-top: 3em;
 }
 .selected {
-  background-color:#D20094
+  background-color: #d20094;
 }
-#timer{
-  padding-left: 2.1em; 
+#timer {
+  padding-left: 2.1em;
   display: flex;
   flex-direction: row-reverse;
   font-size: 2em;
   margin-right: 2em;
   margin-bottom: 2em;
 }
-.slash{
-  padding-left: 0.4em ;
-  color: #D20094;
+.slash {
+  padding-left: 0.4em;
+  color: #d20094;
 }
-.total-questions{
-  color: #D20094;
-  padding-left: 0.4em ;
-
+.total-questions {
+  color: #d20094;
+  padding-left: 0.4em;
 }
 #circle {
   position: absolute;
@@ -171,7 +164,6 @@ form p {
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
-
   .container {
     padding-left: 20px;
     padding-right: 20px;
@@ -215,7 +207,6 @@ form p {
 
 /* Medium screens */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
-
   .container {
     padding-left: 40px;
     padding-right: 40px;
@@ -227,10 +218,10 @@ form p {
     margin-bottom: 3em;
   }
 
-  h1 {
-    font-size: 3em;
-    margin-bottom: 0.4em;
-  }
+  /* h1 { */
+  /* font-size: 3em; */
+  /* margin-bottom: 0.4em; */
+  /* } */
 
   button {
     width: 10em;
@@ -242,7 +233,6 @@ form p {
 
 /* Large screens */
 @media only screen and (min-width: 1025px) {
- 
   .container {
     padding-left: 70px;
   }
@@ -253,8 +243,8 @@ form p {
     margin-bottom: 4em;
   }
 
-  h1 {
-    font-size: 4em;
-    margin-bottom: 0.5em;
-  }
+  /* h1 { */
+  /* font-size: 4em; */
+  /* margin-bottom: 0.5em; */
+  /* } */
 }
