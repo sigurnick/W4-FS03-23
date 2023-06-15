@@ -19,6 +19,8 @@ body {
   max-width: 7em;
   margin-top: 30px;
   margin-bottom: 4em;
+  margin-left: 5em;
+
 }
 h1 {
   font-size: 3.5em;
@@ -83,9 +85,7 @@ button {
 form p {
   font-weight: bold;
 }
-#epicode{
-  margin-left: 5em;
-}
+
 #score{
   color: white;
   font-size: 2em;

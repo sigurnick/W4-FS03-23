@@ -1,18 +1,26 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.96);
 }
 
+/* -----Font style----- */
 h1 {
-  font-family: 'Outfit', sans-serif;
-  font-size: 4em;
+  font-family: "Outfit", sans-serif;
+  font-size: 6em;
   margin: 0;
 }
-h4 {
-  font-size: 1.5em;
+h2 {
+  font-size: 4em;
 }
+h4 {
+  font-size: 1.8em;
+}
+p {
+  font-size: 1em;
+}
+
 #exam-passed {
   color: #00ffff;
 }
@@ -20,39 +28,58 @@ h4 {
   color: #d20094;
 }
 
-/* original */
-/* .chartCard {
-  width: 40%;
-  height: calc(100vh - 40px);
-  background: rgba(54, 163, 235, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.chartBox {
-  width: 500px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0);
-} */
-
-.chartCard {
-  width: 50%;
-height: 50vh;
-  background: rgba(54, 163, 235, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10%;
+button {
+  width: 300px;
+  height: 90px;
+  margin: 0;
   margin-bottom: 5%;
+  background-color: #ffffff00;
+  border: 3px solid white;
+  box-shadow: 1px 1px 17px 1px #00ffff;
+}
+
+/* ----------Canvas chart-------- */
+.chartCard {
+  width: 60%;
+  background: rgba(54, 163, 235, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
 }
 
 .chartBox {
-  width: 70%;
+  width: 50%;
+  height: 50%;
+  min-width: 300px;
+  min-height: auto;
+  max-width: 730px;
   padding: 20px;
   background: rgba(255, 255, 255, 0);
   position: relative;
 }
 
+/* ---Overlay text into chart-- */
+#chartOverlay {
+  text-align: center;
+  width: 45%;
+  height: 20%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+#chartOverlay p {
+  font-size: 1.2em;
+  font-size: calc(0.1rem + 1vw);
+}
+#wrong-answers {
+  text-align: right;
+}
+
+/* ------Main block------ */
 #result-block {
   display: flex;
   justify-content: space-evenly;
@@ -78,46 +105,87 @@ height: 50vh;
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* original */
-/* #chartOverlay {
-  text-align: center;
-  width: 20%;
-  position: absolute;
-  top: 63%;
-  left: 53%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-} */
-
-
-#chartOverlay {
-  text-align: center;
-  width: 45%;
-  height: 20%;
-  position: absolute;
-  top: 38%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-#chartOverlay p {
-  font-size: 1.2em;
-}
-#wrong-answers {
-  text-align: right;
-}
-
 #bottom-block {
   display: flex;
   justify-content: center;
 }
 
-button {
-  width: 260px;
-  margin: 0;
-  margin-bottom: 5%;
-  background-color: #ffffff00;
-  border: 3px solid white;
-  box-shadow: 1px 1px 17px 1px #00ffff;
+
+
+
+
+/* ------------Media query-------------- */
+
+/* Da 1900 in poi */
+@media screen and (min-width: 1900px) {
+  p {
+    font-size: calc(1em + 1vw);
+  }
+
+  h4 {
+    font-size: calc(0.9em + 1vw);
+  }
+
+  h1 {
+    font-size: calc(6em + 1vw);
+  }
+  h2 {
+    font-size: calc(4em + 1vw);
+  }
+}
+
+/* meno di 1450 */
+@media screen and (max-width: 1450px) {
+  #chartOverlay p {
+    display: none;
+  }
+  p {
+    font-size: calc(0.1em + 1vw);
+  }
+  h4 {
+    font-size: calc(0.6em + 1vw);
+  }
+  h1 {
+    font-size: calc(4em + 1vw);
+  }
+  h2 {
+    font-size: calc(2em + 1vw);
+  }
+  button {
+    width: 230px;
+    height: 70px;
+  }
+  #chartOverlay {
+    top: 40%;
+  }
+}
+
+/* meno di 640*/
+@media (max-width: 640px) {
+  h4 {
+    font-size: calc(1em + 1vw);
+  }
+  #result-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .chartCard {
+    margin-bottom: 0;
+    margin-top: 35%;
+    order: 1;
+  }
+
+  #wrong-answers {
+    margin-bottom: 25%;
+
+    order: 3;
+  }
+
+  #correct-answers {
+    margin-bottom: 15%;
+    order: 2;
+  }
 }
