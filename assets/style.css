@@ -1,26 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
-
-
 body {
-  
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   background-image: url("../assets/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   color: white;
- 
- 
 }
 
 .logo {
-
   max-width: 7em;
   margin-top: 30px;
   margin-bottom: 4em;
   margin-left: 5em;
-
+}
+h1 {
+  font-size: 3.5em;
+  color: white;
+  margin-bottom: 0.5em;
 }
 h1 {
   font-size: 3.5em;
@@ -29,7 +27,7 @@ h1 {
 }
 
 h1 {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-weight: 400;
   font-size: 4em;
   /* color: white; */
@@ -61,7 +59,7 @@ ul li {
   margin-left: 1.6em;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
 }
 button {
@@ -86,18 +84,18 @@ form p {
   font-weight: bold;
 }
 
-#score{
+#score {
   color: white;
   font-size: 2em;
   margin-top: 5em;
 }
 
-.question{
+.question {
   font-size: 2.5em;
   display: flex;
   justify-content: center;
 }
-.question-container{
+.question-container {
   margin-right: 5em;
   margin-left: 5em;
 }
@@ -109,13 +107,12 @@ form p {
   flex-wrap: wrap;
   justify-content: center;
 }
- 
-.answer-item:hover{
-  background-color: #D20094;
+
+.answer-item:hover {
+  background-color: #d20094;
   cursor: pointer;
   padding-top: 1em;
   padding-bottom: 1em;
-  
 }
 
 .answer-item {
@@ -126,32 +123,40 @@ form p {
   justify-content: center;
   padding: 20px;
   margin-left: 20px;
-  border: 2px outset #FFFFFF;
+  border: 2px outset #ffffff;
   border-radius: 40px;
-  box-shadow:-3px -2px 15px -1px #FFFFFF;
+  box-shadow: -3px -2px 15px -1px #ffffff;
 }
 
-.question-number{
+.question-number {
   letter-spacing: 0.1cm;
   display: flex;
   justify-content: center;
   margin-top: 3em;
 }
 .selected {
-  background-color:#D20094
+  background-color: #d20094;
 }
 
-.slash{
-  padding-left: 0.4em ;
-  color: #D20094;
+.slash {
+  padding-left: 0.4em;
+  color: #d20094;
 }
-.total-questions{
-  color: #D20094;
-  padding-left: 0.4em ;
-
+.total-questions {
+  color: #d20094;
+  padding-left: 0.4em;
 }
 
-#countdown { 
+.slash {
+  padding-left: 0.4em;
+  color: #d20094;
+}
+.total-questions {
+  color: #d20094;
+  padding-left: 0.4em;
+}
+
+#countdown {
   position: absolute;
   top: 3%;
   right: 40px;
@@ -160,7 +165,6 @@ form p {
   height: 200px;
   width: 200px;
   text-align: center;
- 
 }
 
 #timer {
@@ -172,7 +176,6 @@ form p {
 }
 
 svg {
-  
   position: absolute;
   top: 0;
   right: 0;
@@ -204,7 +207,6 @@ svg circle {
 
 /* Small screens */
 @media only screen and (max-width: 600px) {
-  
   .container {
     padding-left: 20px;
     padding-right: 20px;
@@ -248,7 +250,6 @@ svg circle {
 
 /* Medium screens */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
-
   .container {
     padding-left: 40px;
     padding-right: 40px;
@@ -275,8 +276,6 @@ svg circle {
 
 /* Large screens */
 @media only screen and (min-width: 1025px) {
- 
-  
   .container {
     padding-left: 70px;
   }
