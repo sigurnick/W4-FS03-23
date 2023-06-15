@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background-image: url("../assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: white;
+  margin: auto;
+  max-width: 900px;
+}
+
+.logo {
+  max-width: 7em;
+  margin-top: 30px;
+  margin-bottom: 4em;
+  margin-left: 0;
+}
+
+h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 3.5em;
+  color: white;
+  margin-bottom: 0.5em;
+}
+b {
+  font-weight: bold;
+}
+
+p {
+  color: white;
+}
+
+button {
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: #00ffff;
+  margin-top: 2em;
+  width: 12em;
+  padding: 1em 2em;
+  box-shadow: 1px 1px 7px 6px #00ffff;
+  border: 1px;
+  cursor: pointer;
+}
+
+.container2 i {
+  font-size: 50px;
+  text-align: center;
+  color: #02174e;
+}
+
+.container2 i:hover {
+  font-size: 50px;
+  color: #00ffff;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 3.5em;
+}
+
+p {
+  margin-top: 20px;
+  padding: 10px;
+  color: white;
+  font-size: 1.5em;
+}
+
+#feedh {
+  display: block;
+  border: none;
+  margin-left: 23%;
+  background: none;
+  font-size: 1em;
+  width: 500px;
+  margin-top: 1.4em;
+}
+
+hr {
+  border-color: #d20094;
+  margin-right: 15%;
+  margin-left: 21%;
+}
+
+.container {
+  width: 100%;
+  text-align: center;
+  height: 100vh;
+}
+
+label {
+  color: white;
+  font-size: 1.3em;
+  margin-left: 1.2em;
+}
+
+.container3 {
+  width: 100%;
+  margin: 4.5em 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.starColored {
+  color: #00ffff;
+}
