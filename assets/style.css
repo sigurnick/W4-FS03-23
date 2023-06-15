@@ -160,6 +160,7 @@ form p {
   height: 200px;
   width: 200px;
   text-align: center;
+ 
 }
 
 #timer {
@@ -171,7 +172,7 @@ form p {
 }
 
 svg {
-
+  
   position: absolute;
   top: 0;
   right: 0;

@@ -111,6 +111,16 @@ function updateTimerDisplay() {
 }
 
 
+// function for resetting the circle animation with the next question
+function resetCircleAnimation() {
+  const circle = document.querySelector("#countdown svg circle");
+  circle.style.animation = "none"
+  circle.getBoundingClientRect()
+  circle.style.strokeDashoffset = "0px"
+  circle.style.animation = "countdown 60s linear infinite forwards";
+}
+
+
 
 // Variable for correct answers only
 const correct_answer = ["Central Processing Unit", "Final", "False", "False",".svg","Cascading Style Sheet","Nougat","140","False","Java"];
@@ -148,6 +158,9 @@ function showQuestion() {
 
   // added the updateTimerDisplay for resetting the timer and starting it from 60s again
   updateTimerDisplay()
+
+  // called the resetCircleAnimation function for resetting the animation when the next qustion shows
+  resetCircleAnimation()
 
   let questionContainer = document.createElement("div");
   questionContainer.classList.add("question-container");
@@ -233,13 +246,15 @@ function checkAnswer(selectedAnswer) {
       score++;
       console.log("Correct answer!");
       console.log(score);
+
     } else {
       console.log("Wrong answer!");
       console.log(score);
     }
+
     selectedAnswers[currentQuestionIndex] = selectedAnswer;
     currentQuestionIndex++; // Move to the next question
-
+   
     if (currentQuestionIndex < questionArray.length) {
       
       showQuestion(); // Show the next question
@@ -263,6 +278,7 @@ function checkAnswer(selectedAnswer) {
 function timeUp() {
   currentQuestionIndex++;
   showQuestion();
+  
 }
 
 // created a function for starting the timer and updating the timer display
@@ -270,7 +286,7 @@ function startTimer() {
 
   // recalled the function updateTimerDisplay so i can use it inside the startTimer
   updateTimerDisplay()
-
+ 
 // setted an interval to reduce the time remaining
   timerId = setInterval(function () {
     timeRemaining--
