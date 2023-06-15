@@ -7,35 +7,30 @@ body {
   background-size: cover;
   background-attachment: fixed;
   color: white;
+}
 
-  margin-left: 5%;
-  margin-right: 5%;
+.logo {
   max-width: 7em;
   margin-top: 30px;
   margin-bottom: 4em;
   margin-left: 5em;
- }HEAD
-
-
+}
 h1 {
   font-size: 3.5em;
   color: white;
   margin-bottom: 0.5em;
- main
+}
+h1 {
+  font-size: 3.5em;
+  color: white;
+  margin-bottom: 0.5em;
 }
 
 h1 {
-  min-width: 1vw;
-  font-size: 6vw;
-  margin-bottom: 0.5em;
- }HEAD
-
-
-
-h1 {
-main
   font-family: "Outfit", sans-serif;
   font-weight: 400;
+  font-size: 4em;
+  /* color: white; */
   margin-bottom: 0.5em;
   line-height: 1;
 }
@@ -46,46 +41,39 @@ b {
 
 h3 {
   color: #d20094;
-  min-width: 0.5vw;
-  font-size: 2vw;
+  font-size: 1.5em;
   font-weight: 700;
   margin-bottom: 0.3em;
 }
 
 p {
   display: inline;
-  line-height: initial;
-  min-width: 1vw;
-  font-size: 1.5vw;
 }
 
 ul {
   margin-top: 2.7em;
-  margin-bottom: 2.7em;
 }
 
 ul li {
   margin-top: 0.5em;
   margin-left: 1.6em;
-  min-width: 1vw;
-  font-size: 1.5vw;
 }
 
 button:hover {
   cursor: pointer;
 }
-#button {
+button {
   display: inline;
-  font-size: 2vw;
+  font-size: 1.2em;
   font-weight: bold;
   background-color: #00ffff;
   width: 12em;
   padding: 1em 2em;
-  box-shadow: 1px 1px 20px 1px #00ffff;
+  box-shadow: 1px 1px 7px 6px #00ffff;
   border: 1px;
-  margin-top: 50px;
+  margin-top: 75px;
   margin-bottom: 75px;
-  margin-left: 12vw;
+  margin-left: 150px;
 }
 
 .container {
@@ -149,29 +137,6 @@ form p {
 .selected {
   background-color: #d20094;
 }
-  HEAD
-
-#timer {
-  padding-left: 2.1em;
-  display: flex;
-  flex-direction: row-reverse;
-  font-size: 2em;
-  margin-right: 2em;
-  margin-bottom: 2em;
-}
-.slash {
-  padding-left: 0.4em;
-  color: #d20094;
-}
-.slash {
-  padding-left: 0.4em;
-  color: #d20094;
-}
-.total-questions {
-  color: #d20094;
-  padding-left: 0.4em;
-}
-
 
 .slash {
   padding-left: 0.4em;
@@ -191,7 +156,6 @@ form p {
   padding-left: 0.4em;
 }
 
- main
 #countdown {
   position: absolute;
   top: 3%;
@@ -297,10 +261,10 @@ svg circle {
     margin-bottom: 3em;
   }
 
-  /* h1 { */
-  /* font-size: 3em; */
-  /* margin-bottom: 0.4em; */
-  /* } */
+  h1 {
+    font-size: 3em;
+    margin-bottom: 0.4em;
+  }
 
   button {
     width: 10em;
@@ -322,15 +286,8 @@ svg circle {
     margin-bottom: 4em;
   }
 
- HEAD
-  /* h1 { */
-  /* font-size: 4em; */
-  /* margin-bottom: 0.5em; */
-  /* } */
-
   h1 {
     font-size: 4em;
     margin-bottom: 0.5em;
   }
- main
 }
