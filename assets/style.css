@@ -4,6 +4,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: white;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .logo {
@@ -56,18 +58,18 @@ ul li {
 button:hover {
   cursor: pointer;
 }
-button {
+#button {
   display: inline;
-  font-size: 1.2em;
+  font-size: 2vw;
   font-weight: bold;
   background-color: #00ffff;
   width: 12em;
   padding: 1em 2em;
   box-shadow: 1px 1px 20px 1px #00ffff;
   border: 1px;
-  margin-top: 75px;
+  margin-top: 50px;
   margin-bottom: 75px;
-  margin-left: 150px;
+  margin-left: 12vw;
 }
 
 .container {
