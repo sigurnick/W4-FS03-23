@@ -108,6 +108,15 @@ function updateTimerDisplay() {
   timerDisplay.innerText = timeRemaining;
 }
 
+// function for resetting the circle animation with the next question
+function resetCircleAnimation() {
+  const circle = document.querySelector("#countdown svg circle");
+  circle.style.animation = "none";
+  circle.getBoundingClientRect();
+  circle.style.strokeDashoffset = "0px";
+  circle.style.animation = "countdown 60s linear infinite forwards";
+}
+
 // Variable for correct answers only
 const correct_answer = [
   "Central Processing Unit",
@@ -154,6 +163,9 @@ function showQuestion() {
 
   // added the updateTimerDisplay for resetting the timer and starting it from 60s again
   updateTimerDisplay();
+
+  // called the resetCircleAnimation function for resetting the animation when the next qustion shows
+  resetCircleAnimation();
 
   let questionContainer = document.createElement("div");
   questionContainer.classList.add("question-container");
@@ -245,6 +257,7 @@ function checkAnswer(selectedAnswer) {
       console.log("Wrong answer!");
       console.log(score);
     }
+
     selectedAnswers[currentQuestionIndex] = selectedAnswer;
     currentQuestionIndex++; // Move to the next question
 
