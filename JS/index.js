@@ -13,6 +13,6 @@ button.addEventListener('click',function (e){
     alert('non hai spuntato la checkbox')
 
     }else{
-        window.location.href = '/question.html';
+        window.location.href = '/scelta.html';
     }
 })

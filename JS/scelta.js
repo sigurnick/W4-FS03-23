@@ -13,7 +13,7 @@ button.addEventListener('click',function (e){
       if(easy.checked===true){
         window.location.href='/question.html';
       }else if(hard.checked===true){
-        window.location.href='/question.html';
+        window.location.href='/hard.html';
       }else{
         alert('non hai fatto nessuna scelta')
       }
