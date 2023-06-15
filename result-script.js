@@ -68,8 +68,7 @@ const resultChart = function (correctAnswers, totQuestion) {
         backgroundColor: ["#D20094", "#00FFFF"],
         borderColor: ["#D20094", "#00FFFF"],
         borderWidth: 1,
-        cutout: "75%",
-        //rotation: -90 //
+        cutout: "77%",
       },
     ],
   };
@@ -79,24 +78,8 @@ const resultChart = function (correctAnswers, totQuestion) {
     type: "doughnut",
     data,
     options: {
-      plugins: {
-        annotation: {
-          annotations: [
-            {
-              type: "text",
-              x: "50%",
-              y: "50%",
-              text: "Testo personalizzato",
-              fontColor: "orange",
-              fontSize: 20,
-              backgroundColor: "rgba(255, 255, 255, 0.8)",
-              textAlign: "center",
-              xAdjust: 0,
-              yAdjust: 0,
-            },
-          ],
-        },
-      },
+      plugins: {},
+      responsive: true,
     },
 
     elements: {
@@ -106,20 +89,14 @@ const resultChart = function (correctAnswers, totQuestion) {
     },
   };
 
-  // render init block
   const myChart = new Chart(document.getElementById("myChart"), config);
 };
 
 resultChart(totalScore, questions);
-// resultChart(4, 13);
-
-
-
+// resultChart(10, 13);
 
 //button event
-let button=document.getElementById('rate-us-button')
-button.addEventListener('click',function (e){
-   
-        window.location.href = '/feedback.html';
-    
-})
+let button = document.getElementById("rate-us-button");
+button.addEventListener("click", function (e) {
+  window.location.href = "/feedback.html";
+});
