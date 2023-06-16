@@ -8,6 +8,9 @@ body {
   background-attachment: fixed;
   color: white;
 }
+main {
+  margin-left: 5%;
+}
 
 .logo {
   max-width: 7em;
@@ -15,38 +18,27 @@ body {
   margin-bottom: 4em;
   margin-left: 5em;
 }
-h1 {
-  font-size: 3.5em;
-  color: white;
-  margin-bottom: 0.5em;
-}
-h1 {
-  font-size: 3.5em;
-  color: white;
-  margin-bottom: 0.5em;
-}
 
+
+/* -----------Font style------------ */
 h1 {
   font-family: "Outfit", sans-serif;
   font-weight: 400;
-  font-size: 4em;
-  /* color: white; */
+  font-size: 6em;
+  color: white;
   margin-bottom: 0.5em;
   line-height: 1;
 }
 
-b {
-  font-weight: 900;
-}
-
 h3 {
   color: #d20094;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: 700;
   margin-bottom: 0.3em;
 }
 
 p {
+  font-size: 1em;
   display: inline;
 }
 
@@ -57,6 +49,26 @@ ul {
 ul li {
   margin-top: 0.5em;
   margin-left: 1.6em;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.5);
+}
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+  list-style: circle;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  color: white;
+}
+
+b {
+  font-weight: 900;
+  color: white;
 }
 
 button:hover {
@@ -80,10 +92,20 @@ button {
   padding-left: 70px;
 }
 
+.trasparent {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 form p {
   font-weight: bold;
 }
+form {
+  margin-top: 15%;
+}
 
+
+
+/* ---------Question section---------- */
 #score {
   color: white;
   font-size: 2em;
@@ -156,6 +178,8 @@ form p {
   padding-left: 0.4em;
 }
 
+
+/* ---Countdown--- */
 #countdown {
   position: absolute;
   top: 3%;
@@ -194,6 +218,10 @@ svg circle {
   animation: countdown 60s linear infinite forwards;
 }
 
+
+
+
+/* -------Media query-------- */
 @keyframes countdown {
   from {
     stroke-dashoffset: 0px;
@@ -220,7 +248,7 @@ svg circle {
 
   h1 {
     font-size: 2.5em;
-    margin-bottom: 0.3em;
+    margin-bottom: 1.5em;
   }
 
   h1,
@@ -230,7 +258,7 @@ svg circle {
 
   button {
     width: 100%;
-    margin: 20px 0;
+    margin: 80px 0;
   }
 
   ul li {
@@ -245,6 +273,10 @@ svg circle {
   #circle {
     margin-left: 0;
     margin-right: auto;
+  }
+  ul {
+    margin-bottom: 3em;
+    margin-top: 3em;
   }
 }
 
@@ -281,13 +313,21 @@ svg circle {
   }
 
   .logo {
-    max-width: 7em;
+    max-width: 9em;
     margin-top: 30px;
     margin-bottom: 4em;
   }
 
   h1 {
-    font-size: 4em;
+    font-size: 6em;
     margin-bottom: 0.5em;
+  }
+  h3 {
+    font-size: 2em;
+  }
+  p,
+  ul,
+  li {
+    font-size: 1.3em;
   }
 }
