@@ -14,7 +14,7 @@ main{
 .logo {
   max-width: 7em;
   margin-top: 30px;
-  margin-bottom: 4em;
+  margin-bottom: 3,em;
   margin-left: 5em;
 }
 
@@ -96,11 +96,10 @@ button {
 }
 
 form p {
+ 
   font-weight: bold;
 }
-form {
-  margin-top: 15%;
-}
+
 #button{
   margin-left: 20%;
 }
@@ -119,6 +118,7 @@ form {
   justify-content: center;
 }
 .question-container {
+  margin-top: 8em;
   margin-right: 5em;
   margin-left: 5em;
 }
@@ -134,9 +134,7 @@ form {
 .answer-item:hover {
   background-color: #d20094;
   cursor: pointer;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
+ }
 
 .answer-item {
   background-color: transparent;
@@ -144,10 +142,10 @@ form {
   font-size: 1.5em;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 40px;
   margin-left: 20px;
   border: 2px outset #ffffff;
-  border-radius: 40px;
+  border-radius: 80px;
   box-shadow: -3px -2px 15px -1px #ffffff;
 }
 
