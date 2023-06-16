@@ -4,7 +4,9 @@
   font-family: "Inter", sans-serif;
   color: rgba(255, 255, 255, 0.96);
 }
-
+main{
+  margin-left: 0;
+}
 /* -----Font style----- */
 h1 {
   font-family: "Outfit", sans-serif;
@@ -26,6 +28,9 @@ p {
 }
 #exam-failed {
   color: #d20094;
+}
+header{
+  max-height: 100px;
 }
 
 button {
@@ -180,12 +185,14 @@ button {
 
   #wrong-answers {
     margin-bottom: 25%;
-
     order: 3;
+    text-align: center;
   }
 
   #correct-answers {
     margin-bottom: 15%;
     order: 2;
+    text-align: center;
+
   }
 }
