@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
 
 body {
-  font-family: sans-serif;
   background-image: url("../assets/bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-
+  font-family: "Inter", sans-serif;
   color: white;
   margin: auto;
   /* max-width: 900px; */
@@ -20,6 +19,8 @@ body {
 }
 
 h1 {
+  font-family: "Outfit", sans-serif;
+
   font-size: 3.5em;
   color: white;
   margin-bottom: 0.5em;
@@ -32,7 +33,7 @@ button {
   margin-top: 2em;
   width: 12em;
   padding: 1em 2em;
-  box-shadow: 1px 1px 20px 4px #00ffff;
+  box-shadow: 1px 1px 7px 6px #00ffff;
   border: 1px;
   cursor: pointer;
 }
