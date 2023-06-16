@@ -17,6 +17,12 @@ button.addEventListener('click',function (e){
       }else{
         alert('non hai fatto nessuna scelta')
       }
+
+      if(easy.checked===true && hard.checked===true){
+        alert('errore')
+        window.location.href='/scelta.html'
+  
+
        
      
- })
+ }   })

@@ -8,10 +8,9 @@ body {
   background-attachment: fixed;
   color: white;
 }
-main {
+main{
   margin-left: 5%;
 }
-
 .logo {
   max-width: 7em;
   margin-top: 30px;
@@ -81,7 +80,7 @@ button {
   background-color: #00ffff;
   width: 12em;
   padding: 1em 2em;
-  box-shadow: 1px 1px 7px 6px #00ffff;
+  box-shadow: 1px 1px 20px 4px #00ffff;
   border: 1px;
   margin-top: 75px;
   margin-bottom: 75px;
@@ -102,7 +101,9 @@ form p {
 form {
   margin-top: 15%;
 }
-
+#button{
+  margin-left: 20%;
+}
 
 
 /* ---------Question section---------- */
@@ -255,10 +256,12 @@ svg circle {
   h3 {
     text-align: center;
   }
-
+#button{
+  margin-left: 0;
+}
   button {
     width: 100%;
-    margin: 80px 0;
+    margin: 50pxpx 0;
   }
 
   ul li {

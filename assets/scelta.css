@@ -10,13 +10,14 @@ body {
   max-width: 900px;
 }
 
-.logo {
-  max-width: 7em;
-  margin-top: 30px;
-  margin-bottom: 4em;
-  margin-left: 0;
-  margin-right: 50em;
-}
+
+  .logo {
+    max-width: 7em;
+    margin-top: 30px;
+    margin-bottom: 4em;
+   margin-left: 0;
+   margin-right: 50em;
+     }
 
 h1 {
   font-family: "Outfit", sans-serif;
@@ -26,16 +27,19 @@ h1 {
   margin-bottom: 0.5em;
 }
 
-button {
-  font-size: 1.2em;
-  font-weight: bold;
-  background-color: #00ffff;
-  margin-top: 2em;
-  width: 12em;
-  padding: 1em 2em;
-  box-shadow: 1px 1px 7px 6px #00ffff;
-  border: 1px;
-  cursor: pointer;
+
+button{
+
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #00FFFF;
+    margin-top: 2em;
+    width: 12em;
+   padding: 1em 2em;
+   box-shadow: 1px 1px 7px 6px #00FFFF;
+   border: 1px;
+   cursor: pointer;
+
 }
 
 p {
@@ -43,9 +47,10 @@ p {
   line-height: 2.2em;
 }
 
-#form {
-  text-align: center;
-  margin-top: 1.8em;
+
+#form{
+    text-align: center;
+    margin-top: 1.8em;
 }
 
 .container {
@@ -53,3 +58,4 @@ p {
   text-align: center;
   height: 100vh;
 }
+
